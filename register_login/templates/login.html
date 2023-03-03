@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        h5 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!--label and register button-->
+    <div>
+        <h1>Login</h1>
+        <p>if you don't have an account</p>
+        <a href="register">
+            <button>register</button>
+        </a>
+    </div>
+    {% for message in messages %}
+    <h5>{{message}}</h5>
+    {% endfor %}
+    <!--login form-->
+    <div>
+        <form action="login", method="post">
+            {% csrf_token %}
+            <p>username</p>
+            <input type="text" name="username">
+            <p>password</p>
+            <input type="password" name="password"><br>
+            <input type="submit" value="login">
+        </form>
+    </div>
+</body>
+</html>

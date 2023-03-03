@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <h1>Register-Login-Logout project</h1>
+    {% if user.is_authenticated %}
+    <div>
+        <h2>welcome {{user.username}}</h2> <!-- welcoming the user-->
+        <a href="logout">
+            <button>logout</button>
+        </a>
+    </div>
+    {% else %}
+    <div>
+        <h1>please login</h1>
+        <a href="login">
+            <button>login</button>
+        </a>
+    </div>
+    {% endif %}
+</body>
+</html>
